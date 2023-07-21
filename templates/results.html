@@ -1,0 +1,130 @@
+<!doctype html>
+<html lang="en">
+	<head>
+		<meta charset="utf-8" />
+		<meta
+			name="viewport"
+			content="width=device-width, initial-scale=1, shrink-to-fit=no"
+		/>
+		<meta name="description" content="" />
+		<meta name="author" content="" />
+		<title>AeroGuard</title>
+		<link
+			rel="icon"
+			type="image/x-icon"
+			href="{{ url_for('static', filename='/favicon.ico') }}"
+		/>
+
+		<!-- Font Awesome icons (free version)-->
+		<!-- <script src="https://use.fontawesome.com/releases/v6.3.0/js/all.js" crossorigin="anonymous"></script>
+        <!-- Google fonts-->
+		<!-- <link href="https://fonts.googleapis.com/css?family=Varela+Round" rel="stylesheet" />
+        <link href="https://fonts.googleapis.com/css?family=Nunito:200,200i,300,300i,400,400i,600,600i,700,700i,800,800i,900,900i" rel="stylesheet" /> -->
+
+		<!-- Core theme CSS (includes Bootstrap)-->
+		<link
+			rel="stylesheet"
+			type="text/css"
+			href="{{ url_for('static', filename='css/style.css')}}"
+		/>
+		<link
+			rel="stylesheet"
+			type="text/css"
+			href="{{ url_for('static', filename='https://use.fontawesome.com/releases/v6.3.0/js/all.js"
+			crossorigin="anonymous')}}"
+		/>
+		<link
+			rel="stylesheet"
+			type="text/css"
+			href="{{ url_for('static', filename='https://fonts.googleapis.com/css?family=Varela+Round')}}"
+		/>
+		<link
+			rel="stylesheet"
+			type="text/css"
+			href="{{ url_for('static', filename='https://fonts.googleapis.com/css?family=Nunito:200,200i,300,300i,400,400i,600,600i,700,700i,800,800i,900,900i')}}"
+		/>
+	</head>
+	<style>
+		.stuff {
+		  position: absolute;
+		  top: 50%;
+		  left: 50%;
+		  transform: translate(-50%, -50%);
+		}
+		body {
+			/* background: linear-gradient(to right, #2e3899, #a271f8); */
+      background: 
+				url("{{ url_for('static', filename='img/airport-background.jpg') }}");
+      background-position: center;
+			background-repeat: no-repeat;
+			background-attachment: scroll;
+			background-size: cover;
+		}
+    body::before {
+    /* Pseudo-element for gradient overlay */
+    content: "";
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: linear-gradient(
+        to bottom,
+        rgba(0, 0, 0, 0.3) 0%,
+        rgba(0, 0, 0, 0.7) 75%,
+        #000 100%
+    );
+    pointer-events: none; /* This ensures the pseudo-element doesn't interfere with content */
+    z-index: -1; /* Place the pseudo-element behind the content */
+}
+  </style>
+  <body id="page-top">
+	    <!-- Navigation-->
+		<nav class="navbar navbar-expand-lg navbar-light fixed-top" id="mainNav">
+	<div class="container px-4 px-lg-5">
+		<a
+			class="navbar-brand"
+			href="https://final-project-2023-summer-computer-vision-1.2023-summer-computer-vision.repl.co/#page-top"
+			>AeroGuard</a
+		>
+		<div class="collapse navbar-collapse" id="navbarResponsive">
+			<ul class="navbar-nav ms-auto">
+				<li class="nav-item">
+					<a
+						class="nav-link"
+						href="https://final-project-2023-summer-computer-vision-1.2023-summer-computer-vision.repl.co/#about"
+						><strong>About</strong></a
+					>
+				</li>
+				<li class="nav-item">
+					<a
+						class="nav-link"
+						href="https://final-project-2023-summer-computer-vision-1.2023-summer-computer-vision.repl.co/#projects"
+						><strong>Team</strong></a
+					>
+				</li>
+				<li class="nav-item">
+					<a
+						class="nav-link"
+						href="https://final-project-2023-summer-computer-vision-1.2023-summer-computer-vision.repl.co/#signup"
+						><strong>Other</strong></a
+					>
+				</li>
+			</ul>
+		</div>
+	</div>
+</nav>
+<center>
+	<div id="stuff" class="mt-5">
+		<br>
+		<br>
+		<br>
+		<h1><strong>Thanks for trying out our service!</strong></h1> 
+    <h3 class="mb-5">Processed Image:</h3>
+		<img
+			src="{{url_for('static',  filename=image_name) }}"
+			alt="Processed Image"
+		/>
+	</div>
+</center>
+</body>

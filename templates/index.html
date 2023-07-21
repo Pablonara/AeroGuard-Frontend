@@ -1,0 +1,442 @@
+<!doctype html>
+<html lang="en">
+	<head>
+		<meta charset="utf-8" />
+		<meta
+			name="viewport"
+			content="width=device-width, initial-scale=1, shrink-to-fit=no"
+		/>
+		<meta name="description" content="" />
+		<meta name="author" content="" />
+		<title>AeroGuard</title>
+		<link
+			rel="icon"
+			type="image/x-icon"
+			href="{{ url_for('static', filename='favicon.ico') }}"
+		/>
+
+		<!-- Font Awesome icons (free version)-->
+		<!-- <script src="https://use.fontawesome.com/releases/v6.3.0/js/all.js" crossorigin="anonymous"></script>
+        <!-- Google fonts-->
+		<!-- <link href="https://fonts.googleapis.com/css?family=Varela+Round" rel="stylesheet" />
+        <link href="https://fonts.googleapis.com/css?family=Nunito:200,200i,300,300i,400,400i,600,600i,700,700i,800,800i,900,900i" rel="stylesheet" /> -->
+
+		<!-- Core theme CSS (includes Bootstrap)-->
+		<link
+			rel="stylesheet"
+			type="text/css"
+			href="{{ url_for('static', filename='css/style.css')}}"
+		/>
+		<link
+			rel="stylesheet"
+			type="text/css"
+			href="{{ url_for('static', filename='https://use.fontawesome.com/releases/v6.3.0/js/all.js"
+			crossorigin="anonymous')}}"
+		/>
+		<link
+			rel="stylesheet"
+			type="text/css"
+			href="{{ url_for('static', filename='https://fonts.googleapis.com/css?family=Varela+Round')}}"
+		/>
+		<link
+			rel="stylesheet"
+			type="text/css"
+			href="{{ url_for('static', filename='https://fonts.googleapis.com/css?family=Nunito:200,200i,300,300i,400,400i,600,600i,700,700i,800,800i,900,900i')}}"
+		/>
+	</head>
+	<style>
+		.signup-section {
+			padding: 10rem 0;
+			background: linear-gradient(
+					to bottom,
+					rgba(0, 0, 0, 0.1) 0%,
+					rgba(0, 0, 0, 0.5) 75%,
+					#000 100%
+				),
+				url("{{ url_for("static", filename="img/bg-signup.jpg") }}");
+			background-position: center;
+			background-repeat: no-repeat;
+			background-attachment: scroll;
+			background-size: cover;
+		}
+
+		.masthead {
+			position: relative;
+			width: 100%;
+			height: auto;
+			min-height: 35rem;
+			padding: 15rem 0;
+			background: linear-gradient(
+					to bottom,
+					rgba(0, 0, 0, 0.3) 0%,
+					rgba(0, 0, 0, 0.7) 75%,
+					#000 100%
+				),
+				url("{{ url_for('static', filename='img/airlineluggage-3.jpg') }}");
+			background-position: center;
+			background-repeat: no-repeat;
+			background-attachment: scroll;
+			background-size: cover;
+		}
+
+		#file1 {
+			background-color: blue;
+		}
+		#file1:hover {
+			background-color: cyan;
+		}
+		input[type="text"] {
+			padding: 5px;
+			border: 2px solid #ccc;
+			-webkit-border-radius: 15px;
+			border-radius: 15px;
+			--bs-text-opacity: 1;
+			color: rgba(255, 255, 255, 0.5) !important;
+		}
+
+		input[type="text"]:focus {
+			border-radius: 15px;
+			border-color: #333;
+			--bs-text-opacity: 1;
+			color: rgba(255, 255, 255, 0.5) !important;
+		}
+
+		input[type="submit"] {
+			padding: 5px 15px;
+			background: #ccc;
+			border: 0 none;
+			cursor: crosshair;
+			-webkit-border-radius: 15px;
+			border-radius: 25px;
+			--bs-text-opacity: 1;
+			color: rgba(0, 0, 0, 1) !important;
+			height: 40px;
+			width: 30%;
+			font-weight: bold;
+		}
+		input[type="file"] {
+			border-radius: 10px;
+			padding: 5px 15px;
+			background-color: #5c5c5c; /* Set the background color here */
+			border: 0 none;
+			cursor: pointer;
+			-webkit-border-radius: 25px;
+			border-radius: 25px;
+			color: #fff; /* Set the text color (optional) */
+			font-weight: bold; /* Set the font weight of the text (optional) */
+			--bs-text-opacity: 1;
+			color: rgba(255, 255, 255, 0.5) !important;
+			height: 41px;
+			width: 65%;
+		}
+		input#test1 {
+			background-color: #808080;
+		}
+
+		button {
+			background-color: #69c149;
+		}
+	</style>
+
+	<body id="page-top">
+		<!-- Navigation-->
+		<nav
+			class="navbar navbar-expand-lg navbar-light fixed-top"
+			id="mainNav"
+		>
+			<div class="container px-4 px-lg-5">
+				<a class="navbar-brand" href="#page-top">AeroGuard</a>
+				<!-- <button class="navbar-toggler navbar-toggler-right" type="button" data-bs-toggle="collapse"
+                data-bs-target="#navbarResponsive" aria-controls="navbarResponsive" aria-expanded="false"
+                aria-label="Toggle navigation">
+                
+
+                <i class="fas fa-bars"></i>
+            </button> -->
+				<!-- <button class="upload-btn" type="button">
+    <i class="fas fa-upload"></i> Choose File
+</button>
+<input id="fileInput" type="file" name="file1" style="display: none;">
+            -->
+				<div class="collapse navbar-collapse" id="navbarResponsive">
+					<ul class="navbar-nav ms-auto">
+						<li class="nav-item">
+							<a class="nav-link" href="#about"
+								><strong>Our Mission</strong></a
+							>
+						</li>
+						<li class="nav-item">
+							<a class="nav-link" href="#projects"
+								><strong>Team</strong></a
+							>
+						</li>
+						<li class="nav-item">
+							<a class="nav-link" href="#signup"
+								><strong>About the Model</strong></a
+							>
+						</li>
+					</ul>
+				</div>
+			</div>
+		</nav>
+		<!-- Masthead-->
+		<header class="masthead">
+			<div
+				class="container px-4 px-lg-5 d-flex h-100 align-items-center justify-content-center"
+			>
+				<div class="d-flex justify-content-center">
+					<div class="text-center">
+						<h1 class="mx-auto my-0 text-uppercase">AeroGuard</h1>
+						<h2 class="text-white-50 mx-auto mt-2 mb-5">
+							An AI that detects weapons in airport luggage.
+							Making the future, safer.
+						</h2>
+						<!-- <a class="btn btn-primary upload-btn" href="#" id="uploadBtn">Upload Image</a>
+
+                  <button class="btn btn-primary" id="submit" type="submit" style="display: none;">
+    Upload File -->
+						<form method="post" enctype="multipart/form-data">
+							<input required type="file" name="file1" />
+							<input type="submit" name="test123" />
+						</form>
+						<!-- </button> -->
+
+						<input
+							id="fileInput"
+							type="file"
+							name="file1"
+							style="display: none"
+							accept=".jpg, .jpeg, .png"
+						/>
+
+						<script>
+							document.addEventListener(
+								"DOMContentLoaded",
+								function () {
+									const uploadBtn =
+										document.getElementById("uploadBtn");
+									const fileInput =
+										document.createElement("input");
+									fileInput.type = "file";
+									fileInput.name = "file1";
+									fileInput.style.display = "none";
+									uploadBtn.parentElement.appendChild(
+										fileInput,
+									);
+
+									uploadBtn.addEventListener(
+										"click",
+										function () {
+											fileInput.click();
+										},
+									);
+
+									fileInput.addEventListener(
+										"change",
+										function () {
+											const submitButton =
+												document.createElement("input");
+											submitButton.type = "submit";
+											submitButton.style.display = "none";
+											fileInput.parentElement.appendChild(
+												submitButton,
+											);
+											submitButton.click();
+										},
+									);
+								},
+							);
+						</script>
+
+						<script>
+							document.addEventListener(
+								"DOMContentLoaded",
+								function () {
+									const uploadBtn =
+										document.getElementById("uploadBtn");
+									const submitButton =
+										document.getElementById("submitButton");
+									const fileInput =
+										document.createElement("input");
+									fileInput.type = "file";
+									fileInput.name = "file1";
+									fileInput.style.display = "none";
+									uploadBtn.parentElement.appendChild(
+										fileInput,
+									);
+
+									uploadBtn.addEventListener(
+										"click",
+										function () {
+											fileInput.click();
+										},
+									);
+
+									submitButton.addEventListener(
+										"click",
+										function () {
+											document
+												.getElementById("contactForm")
+												.submit();
+										},
+									);
+
+									fileInput.addEventListener(
+										"change",
+										function () {
+											submitButton.style.display =
+												"block";
+										},
+									);
+								},
+							);
+						</script>
+					</div>
+				</div>
+			</div>
+		</header>
+		<!-- About-->
+		<section class="about-section text-center text-white" id="about">
+			<div class="featured-text text-center">
+				<h4 style="font-size:150%;">Our Mission</h4>
+			</div>
+			<div class="container px-4 px-lg-5">
+				<div class="row gx-4 gx-lg-5 justify-content-center">
+					<div class="col-lg-8">
+						<p style="font-size:150%;" class="text-white">
+							TSA check-in's are becoming too slow and inefficient
+							and there are also some human errors involved in the
+							TSA check-in and weapon detection. Our model helps
+							solve those problems by being able to detect harmful
+							weapons accurately and help reduce human error.<br> 
+						</p>
+					</div>
+				</div>
+				<style>
+					img-behind {
+					    position: absolute;
+					    left: 50%;
+					    margin-left:-256px;
+					}
+
+					     </div>
+					 </section>
+					 <!-- Projects-->
+					 <section class="projects-section bg-light" id="projects">
+					     <div class="container px-4 px-lg-5">
+					         <!-- Featured Project Row-->
+					         <div class="row gx-0 mb-4 mb-lg-5 align-items-center">
+					             <div class="col-xl-8 col-lg-7">
+					                 <style>
+					                     <img class="img-fluid mb-3 mb-lg-0" src="" alt="..." />
+				</style>
+			</div>
+			<!--             </div> -->
+			<!-- Project One Row-->
+			<div id="projects" class="row gx-0 mb-5 mb-lg-0 justify-content-center">
+				<div class="col-lg-6">
+					<div class="bg-black text-center h-100 project">
+						<div class="d-flex h-100">
+							<div
+								class="project-text w-100 my-auto text-center text-lg-left"
+							>
+								
+							</div>
+						</div>
+					</div>
+				</div>
+			</div>
+			<!-- Project Two Row-->
+			<div class="row gx-0 justify-content-center">
+				<div class="col-lg-6">
+					<img
+  					class="img-fluid"
+  					src="{{ url_for('static', filename='/img/gt2.png') }}"
+  					alt="..."
+  				/>
+				</div>
+				<div class="col-lg-6 order-lg-first">
+					<div class="bg-black text-center h-100 project">
+						<div class="d-flex h-100">
+							<div
+								class="project-text w-100 my-auto text-center text-lg-right"
+							>
+								<h4 class="text-white mt-5" style="font-size:200%;" ><strong>About the Model</strong></h4>
+							<p class="mb-0 text-white-50 px-5" style="font-size:150%; text-align: left; text-indent: 25px;">
+               				 We decided that our model should prioritize accuracy over efficiency, since did not want to let any potentially harmful objects through. So, we chose CNNs over Vision Transformer Models as they're known to observe even the slightest of details. This means that we would not be using YOLOs and other VIT models and instead would choose Microsoft's adaptation of Facebook’s DETR Resnet 50 model. However, we ended up choosing Facebook's original model, because of issues that we faced while trying to utilize Microsoft's adaptation. <br> <br>
+                
+                <p class="mb-0 text-white-50 px-5" style="font-size:150%; text-align: left; text-indent: 25px;">Our final product is powered by a fined tuned version of <a href="https://huggingface.co/facebook/detr-resnet-50">Facebook's DETR Resnet 50</a> model with 150 epochs of training on 1000 X-Ray security images. </p><br><br> 
+              
+              <p class="mb-5 mb-5 text-white-50 px-5" style="font-size:150%; text-align: left; text-indent: 25px;">You can access and use the model through HuggingFace here: <a href="https://huggingface.co/Guy2/AirportSec-150epoch">Our Model </a></p>
+							<!-- <p class="mb-0 text-white-50" style="font-size:200%;"><a href="https://huggingface.co/Guy2/AirportSec-150epoch">Our Model </a></p> -->
+							</div>
+						</div>
+					</div>
+				</div>
+			</div>
+			<!--         </div> -->
+		</section>
+    <!-- stuff -->
+		<div class="row gx-0 mb-5 mb-lg-0 justify-content-center">
+			<div class="col-lg-6">
+				
+        <img
+						class="img-fluid"
+						src="https://cdn.discordapp.com/attachments/842610762298949652/1131999593266155600/IMG_0917_3.png"
+						alt="..."
+					/>
+			</div>
+			<div class="col-lg-6">
+				<div class="bg-black text-center h-100 project">
+					<div class="d-flex h-100">
+						<div
+							class="project-text w-100 my-auto text-center text-lg-left mt-5"
+						>
+							<h4 style="font-size:200%;" class="text-white">
+									<strong>People Who Contributed</strong>
+								</h4>
+								<p style="font-size:150%; text-align: left;" class="mb-0 text-white-50 px-5">
+									<ins>Instructor:</ins>
+									<br><b style="text-indent: 25px">Taro Iyadomi:</b> Just an average AI Camp Instructor!<br><br>
+                  
+									<ins>Students:</ins><br />
+									<b style="text-indent: 25px">Suhaas Maddukuri:</b> 15 year old that loves basketball.<br><br> 
+									<b style="text-indent: 25px">Guy Sandler:</b> I'm a 14 year old experienced backend developer<br> <br>
+									<b style="text-indent: 25px">Christopher Lee:</b> A 15 year old who has over 6k hours on val :). (I haven't touched it in 7 months, I hate it)<br><br> 
+									<b style="text-indent: 25px">Dominic Blake:</b> A 17 year old who reads too many Sci-Fi novels.<br> <br>
+									<b style="text-indent: 25px">Noah Zhou:</b> 14 years old, writes bad recursion code. Frontend is working woo!<br> <br>
+									<b style="text-indent: 25px">Zion Bian:</b> 14 years old and I play the violin.<br> <br>
+								</p>
+						</div>
+					</div>
+				</div>
+			</div>
+		</div>
+
+		<!-- Contact-->
+		<section>
+			<div class="social d-flex justify-content-center">
+				<a class="mx-2" href="#!"><i class="fab fa-twitter"></i></a>
+				<a class="mx-2" href="#!"><i class="fab fa-facebook-f"></i></a>
+				<a class="mx-2" href="#!"><i class="fab fa-github"></i></a>
+			</div>
+			<!--         </div> -->
+		</section>
+		<!-- Footer-->
+		<footer id="signup" class="footer bg-black small text-center text-white-50">
+			<div class="container px-4 px-lg-5">
+				Copyright &copy; AeroGuardAI <br />
+        Built with &#10084;&#65039;
+			</div>
+		</footer>
+		<!-- Bootstrap core JS-->
+		<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.3/dist/js/bootstrap.bundle.min.js"></script>
+		<!-- Core theme JS-->
+		<script src="/js/scripts.js"></script>
+		<!-- * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * *-->
+		<!-- * *                               SB Forms JS                               * *-->
+		<!-- * * Activate your form at https://startbootstrap.com/solution/contact-forms * *-->
+		<!-- * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * *-->
+		<script src="https://cdn.startbootstrap.com/sb-forms-latest.js"></script>
+	</body>
+</html>
